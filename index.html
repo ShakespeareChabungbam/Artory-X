@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artory X — Website Development & Software Solutions</title>
+    <meta name="description" content="Artory X builds high-performance web applications, custom software, and AI/ML solutions. Expert in HTML, CSS, JS, Python, Flask, PostgreSQL, REST API, Flutter, Neural Networks & NLP.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ═══ BACKGROUND DECORATIVE LAYER ═══ -->
+    <div class="bg-glow bg-glow--tl" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--cr" aria-hidden="true"></div>
+    <div class="dot-grid dot-grid--tr" aria-hidden="true"></div>
+    <div class="dot-grid dot-grid--ml" aria-hidden="true"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <canvas class="particle-canvas" id="particleCanvas" aria-hidden="true"></canvas>
+
+    <!-- ═══ HEADER / NAV ═══ -->
+    <header class="header" id="header">
+        <a href="#" class="logo" aria-label="Artory X Homepage">
+            <span class="logo__name">ARTORY</span><span class="logo__x">X</span>
+        </a>
+        <nav class="nav" id="nav">
+            <a href="#services" class="nav__link">Services</a>
+            <a href="#work" class="nav__link">Our Work</a>
+            <a href="#addons" class="nav__link">Technologies</a>
+            <a href="#process" class="nav__link">Process</a>
+            <a href="#faq" class="nav__link">FAQ</a>
+        </nav>
+        <a href="#contact" class="header__cta">Contact Us</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+            <span class="bar bar--1"></span>
+            <span class="bar bar--2"></span>
+        </button>
+    </header>
+
+    <!-- ═══ HERO SECTION ═══ -->
+    <section class="hero" id="hero">
+        <div class="hero__wave" aria-hidden="true">
+            <svg class="hero__wave-svg" viewBox="0 0 1440 900" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="wg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#00b8d4" stop-opacity="0.7"/>
+                        <stop offset="30%" stop-color="#0044cc" stop-opacity="0.55"/>
+                        <stop offset="60%" stop-color="#1a0a6b" stop-opacity="0.5"/>
+                        <stop offset="100%" stop-color="#00c853" stop-opacity="0.6"/>
+                    </linearGradient>
+                    <linearGradient id="wg2" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#00c853" stop-opacity="0.3"/>
+                        <stop offset="50%" stop-color="#0044cc" stop-opacity="0.2"/>
+                        <stop offset="100%" stop-color="#00b8d4" stop-opacity="0.18"/>
+                    </linearGradient>
+                    <linearGradient id="wg3" x1="0%" y1="50%" x2="100%" y2="50%">
+                        <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.08"/>
+                        <stop offset="50%" stop-color="#0044cc" stop-opacity="0.06"/>
+                        <stop offset="100%" stop-color="#00c853" stop-opacity="0.07"/>
+                    </linearGradient>
+                </defs>
+                <path class="wave-p wave-p--3" d="M-100,550 C200,350 400,750 720,400 C1040,50 1200,350 1540,250 L1540,950 L-100,950Z" fill="url(#wg3)"/>
+                <path class="wave-p wave-p--2" d="M-100,580 C250,320 500,720 750,420 C1000,120 1250,380 1540,300 L1540,950 L-100,950Z" fill="url(#wg2)"/>
+                <path class="wave-p wave-p--1" d="M-100,620 C200,400 450,780 780,450 C1100,120 1300,400 1540,350 L1540,950 L-100,950Z" fill="url(#wg1)"/>
+            </svg>
+        </div>
+        <div class="container hero__inner">
+            <p class="hero__eyebrow reveal">Website & Software Development</p>
+            <h1 class="hero__heading reveal">
+                We build websites & software that drive <span class="hero__accent">real results.</span>
+            </h1>
+            <p class="hero__sub reveal">
+                From high-converting web applications to powerful mobile apps and AI-driven features — we deliver custom digital products using Python, Flutter, REST APIs, and advanced neural networks.
+            </p>
+            <div class="hero__actions reveal">
+                <a href="#contact" class="btn btn--primary">Start Your Project</a>
+                <a href="#work" class="btn btn--outline">See Our Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ STATS SECTION ═══ -->
+    <section class="stats" id="stats">
+        <div class="container stats__grid">
+            <div class="stat reveal">
+                <span class="stat__number" data-target="5">0</span><span class="stat__percent">+</span>
+                <p class="stat__text">Projects delivered across full-stack web applications and mobile apps for clients worldwide</p>
+            </div>
+            <div class="stat stat--highlight reveal">
+                <span class="stat__label">Full-Stack</span>
+                <p class="stat__text">End-to-end full-stack development — building secure, scalable web applications with Python, Flask, and PostgreSQL</p>
+            </div>
+            <div class="stat reveal">
+                <span class="stat__number" data-target="100">0</span><span class="stat__percent">%</span>
+                <p class="stat__text">Custom-built solutions. No templates, no page builders. Every line of code is written specifically for your business</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ TECHNOLOGIES & AI/ML STACK ═══ -->
+    <section class="addons" id="addons">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-header__eyebrow">Our Tech Stack</p>
+                <h2 class="section-header__title">Technologies we work with.</h2>
+                <p class="section-header__sub">Modern, battle-tested tools and frameworks — from web and mobile to AI & machine learning.</p>
+            </div>
+            <div class="addons__grid reveal">
+                <span class="addon-pill addon-pill--accent">HTML5</span>
+                <span class="addon-pill addon-pill--accent">CSS3</span>
+                <span class="addon-pill addon-pill--accent">JavaScript</span>
+                <span class="addon-pill addon-pill--accent">Python</span>
+                <span class="addon-pill addon-pill--accent">Flask</span>
+                <span class="addon-pill addon-pill--accent">PostgreSQL</span>
+                <span class="addon-pill addon-pill--accent">REST API</span>
+                <span class="addon-pill addon-pill--accent">Flutter</span>
+                <span class="addon-pill addon-pill--accent">Dart</span>
+            </div>
+            <div class="section-header reveal" style="margin-top: clamp(1.5rem, 3vw, 2.5rem);">
+                <p class="section-header__eyebrow">AI & Machine Learning</p>
+            </div>
+            <div class="addons__grid reveal">
+                <span class="addon-pill addon-pill--accent">Neural Networks</span>
+                <span class="addon-pill addon-pill--accent">Computer Vision</span>
+                <span class="addon-pill addon-pill--accent">NLP (Text AI)</span>
+                <span class="addon-pill addon-pill--accent">Predictive Modeling</span>
+                <span class="addon-pill addon-pill--accent">TensorFlow</span>
+                <span class="addon-pill addon-pill--accent">PyTorch</span>
+                <span class="addon-pill addon-pill--accent">Scikit-Learn</span>
+                <span class="addon-pill addon-pill--accent">OpenCV</span>
+            </div>
+            <div class="section-header reveal" style="margin-top: clamp(1.5rem, 3vw, 2.5rem);">
+                <p class="section-header__eyebrow">Also Available</p>
+                <h2 class="section-header__title" style="font-size: clamp(1.4rem, 2.5vw, 2rem);">Additional services we provide.</h2>
+            </div>
+            <div class="addons__grid reveal">
+                <span class="addon-pill">SEO Optimization</span>
+                <span class="addon-pill">Social Media Marketing</span>
+                <span class="addon-pill">Google Ads</span>
+                <span class="addon-pill">Logo Design</span>
+                <span class="addon-pill">Brand Identity</span>
+                <span class="addon-pill">UI/UX Design</span>
+                <span class="addon-pill">Graphic Design</span>
+                <span class="addon-pill">Domain & Hosting</span>
+                <span class="addon-pill">Maintenance & Support</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SERVICES SECTION ═══ -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-header__eyebrow">What We Do</p>
+                <h2 class="section-header__title">End-to-end digital solutions for your business.</h2>
+                <p class="section-header__sub">We combine stunning design with powerful technology to build products that perform.</p>
+            </div>
+            <div class="services__grid">
+                <div class="service-card reveal">
+                    <div class="service-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <h3 class="service-card__title">Full-Stack Web Development</h3>
+                    <p class="service-card__text">End-to-end custom web applications. From responsive frontends (HTML/CSS/JS) to robust backend architectures and secure databases (Python, Flask, PostgreSQL, REST APIs) — all built from scratch without templates.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    </div>
+                    <h3 class="service-card__title">Mobile App Development</h3>
+                    <p class="service-card__text">Cross-platform mobile apps built with Flutter & Dart. One codebase for Android and iOS — beautiful, native-feeling, and lightning fast.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3 class="service-card__title">Custom Software</h3>
+                    <p class="service-card__text">Tailored software solutions — POS systems, inventory management, school ERP, CRM tools, and more. Built from scratch to match your exact workflow.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h3 class="service-card__title">Digital Marketing</h3>
+                    <p class="service-card__text">SEO optimization, social media marketing, Google Ads, and content strategy. Get found online and convert visitors into paying customers.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    </div>
+                    <h3 class="service-card__title">AI & Machine Learning</h3>
+                    <p class="service-card__text">Next-generation intelligent solutions. We leverage advanced neural networks, computer vision, and Natural Language Processing (NLP) to build predictive models and AI-driven features that automate and elevate your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ PROCESS SECTION ═══ -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-header__eyebrow">How We Work</p>
+                <h2 class="section-header__title">A streamlined process from idea to launch.</h2>
+            </div>
+            <div class="process__steps">
+                <div class="process-step reveal">
+                    <div class="process-step__num">1</div>
+                    <div class="process-step__content">
+                        <h3 class="process-step__title">Discovery & Planning</h3>
+                        <p class="process-step__text">We understand your business, target audience, and goals. Together we define the scope, features, tech stack, and timeline for your project.</p>
+                    </div>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-step__num">2</div>
+                    <div class="process-step__content">
+                        <h3 class="process-step__title">Design & Prototype</h3>
+                        <p class="process-step__text">We create stunning UI/UX designs and interactive prototypes. You see exactly how your website or app will look before a single line of code is written.</p>
+                    </div>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-step__num">3</div>
+                    <div class="process-step__content">
+                        <h3 class="process-step__title">Development & Testing</h3>
+                        <p class="process-step__text">Our developers bring the design to life with clean, hand-written code. Rigorous testing on every device and browser ensures a flawless product.</p>
+                    </div>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-step__num">4</div>
+                    <div class="process-step__content">
+                        <h3 class="process-step__title">Launch & Support</h3>
+                        <p class="process-step__text">We deploy your project, configure hosting, and hand over everything. Post-launch support, maintenance, and scaling — we're with you long-term.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="process__cta reveal">
+                <a href="#contact" class="btn btn--primary">Start Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ PORTFOLIO / OUR WORK ═══ -->
+    <section class="work" id="work">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-header__eyebrow">Portfolio</p>
+                <h2 class="section-header__title">Our Work.</h2>
+            </div>
+            <div class="work-showcase reveal">
+                <div class="work-showcase__img-wrap">
+                    <img src="assets/Daichiro.png" alt="Daichiro Professional Skills Academy Website" class="work-showcase__img" loading="lazy">
+                </div>
+                <div class="work-showcase__info">
+                    <span class="work-showcase__badge">Live Project</span>
+                    <h3 class="work-showcase__name">Daichiro Professional Skills Academy</h3>
+                    <span class="work-showcase__tag">Full-Stack Web App • Python / Flask / PostgreSQL</span>
+                    <p class="work-showcase__desc">A complete career counselling & skill development platform featuring student management, online booking system, AI-powered career assessments, admin dashboard, and responsive design — built entirely from scratch.</p>
+                    <div class="work-showcase__tech">
+                        <span>Python</span><span>Flask</span><span>PostgreSQL</span><span>REST API</span><span>HTML/CSS/JS</span>
+                    </div>
+                    <a href="https://daichiro.in/" target="_blank" rel="noopener" class="work-showcase__link">
+                        Visit Live Site
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="work__cta reveal">
+                <a href="#contact" class="btn btn--outline">Want something like this? Let's talk!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ TESTIMONIALS ═══ -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="testimonial-slider" id="testimonialSlider">
+                <div class="testimonial reveal">
+                    <div class="testimonial__quote">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" opacity="0.2"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    </div>
+                    <p class="testimonial__text">I recently worked with the incredible team at Artory X for my website design, and it was an absolute delight. Their outstanding results and passion for their craft were evident in every pixel.</p>
+                    <div class="testimonial__author">
+                        <div class="testimonial__avatar">RS</div>
+                        <div>
+                            <strong class="testimonial__name">Rahul Sharma</strong>
+                            <span class="testimonial__role">Director, TechVista Solutions</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial reveal" style="display:none;">
+                    <div class="testimonial__quote">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" opacity="0.2"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    </div>
+                    <p class="testimonial__text">I am particularly pleased with the design of the website, which I would rate as ⭐⭐⭐⭐⭐. Their inclusion of additional elements even beyond the initial scope has significantly enhanced the website's appeal.</p>
+                    <div class="testimonial__author">
+                        <div class="testimonial__avatar">AP</div>
+                        <div>
+                            <strong class="testimonial__name">Ankit Patel</strong>
+                            <span class="testimonial__role">Founder, Skyline Commerce</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots" id="testimonialDots">
+                <button class="testimonial-dot active" data-index="0" aria-label="Testimonial 1"></button>
+                <button class="testimonial-dot" data-index="1" aria-label="Testimonial 2"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FAQ SECTION ═══ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-header__eyebrow">Questions?</p>
+                <h2 class="section-header__title">Frequently Asked Questions</h2>
+            </div>
+            <div class="faq__list">
+                <div class="faq-item reveal">
+                    <button class="faq-item__q" aria-expanded="false">
+                        <span>What services does Artory X offer?</span>
+                        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-item__a">
+                        <p>We offer full-stack web development (HTML, CSS, JS, Python, Flask, PostgreSQL), mobile app development (Flutter & Dart), AI & machine learning solutions (neural networks, computer vision, predictive modeling, NLP), custom software, UI/UX design, and digital marketing.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-item__q" aria-expanded="false">
+                        <span>How much does a website or app cost?</span>
+                        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-item__a">
+                        <p>Every project is custom-built, so the cost depends on complexity, features, and timeline. We provide honest pricing, keep rates competitive, and are happy to tailor packages to fit your budget. Contact us for a free quote.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-item__q" aria-expanded="false">
+                        <span>Can you build both a web application and a mobile app for my business?</span>
+                        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-item__a">
+                        <p>Absolutely! We specialize in building complete digital ecosystems. We can build your full-stack web application with a unified REST API, then create a Flutter mobile app that connects to the same system — sharing data seamlessly across all platforms.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-item__q" aria-expanded="false">
+                        <span>Do you use templates or page builders?</span>
+                        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-item__a">
+                        <p>No. Every project is 100% hand-coded from scratch. This gives us complete control over design, performance, and scalability. No WordPress, no Wix, no drag-and-drop — just clean, custom code.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-item__q" aria-expanded="false">
+                        <span>How do we get started?</span>
+                        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-item__a">
+                        <p>Simply call us or send an email. We'll discuss your requirements, understand your vision, give you an estimate, and start building. We work with clients worldwide — distance is never a barrier.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-item__q" aria-expanded="false">
+                        <span>Do you provide support after launch?</span>
+                        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-item__a">
+                        <p>Yes! We offer ongoing maintenance, bug fixes, feature updates, and technical support. Your project doesn't end at launch — we're your long-term technology partner.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FINAL CTA SECTION ═══ -->
+    <section class="final-cta" id="contact">
+        <div class="container final-cta__inner">
+            <div class="final-cta__content reveal">
+                <h2 class="final-cta__title">Ready to build something<br>extraordinary?</h2>
+                <p class="final-cta__text">Whether it's a web application, mobile app, or custom software — let's talk about how we can bring your vision to life.</p>
+                <div class="final-cta__actions">
+                    <a href="https://wa.me/917005974721?text=Hi%20Artory%20X,%20I'm%20interested%20in%20building%20a%20project!" target="_blank" rel="noopener" class="btn btn--primary btn--lg" style="background: linear-gradient(135deg, #25D366, #128C7E); border: none; box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        WhatsApp Us
+                    </a>
+                    <a href="tel:+917005974721" class="btn btn--outline">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Call
+                    </a>
+                    <a href="mailto:theartoryproject@gmail.com" class="btn btn--outline">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Email
+                    </a>
+                </div>
+            </div>
+            <div class="final-cta__contact-card reveal">
+                <h3>Wanna Talk? We'd love to.</h3>
+                <p class="final-cta__subtitle">Just shoot us a message or call us directly.</p>
+                <div class="final-cta__links">
+                    <a href="mailto:theartoryproject@gmail.com" class="final-cta__link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        theartoryproject@gmail.com
+                    </a>
+                    <a href="tel:+917005974721" class="final-cta__link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        +91 7005974721
+                    </a>
+                    <a href="https://www.artory.in" target="_blank" rel="noopener" class="final-cta__link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        www.artory.in
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <div class="site-footer__brand">
+                <a href="#" class="logo"><span class="logo__name">ARTORY</span><span class="logo__x">X</span></a>
+                <p class="site-footer__tagline">Websites & Software, Built From Scratch.</p>
+            </div>
+            <div class="site-footer__copy">
+                <p>© 2025 Artory X. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══ FLOATING WHATSAPP BUTTON ═══ -->
+    <a href="https://wa.me/917005974721?text=Hi%20Artory%20X,%20I'm%20interested%20in%20building%20a%20project!" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+
+    <!-- ═══ SCRIPTS ═══ -->
+    <script>
+    (() => {
+        'use strict';
+        const root = document.documentElement;
+        let mouseX = 0, mouseY = 0;
+
+        /* ═══════════════════════════════════════════
+           1. CURSOR SPOTLIGHT GLOW
+           ═══════════════════════════════════════════ */
+        const cursorGlow = document.getElementById('cursorGlow');
+        document.addEventListener('mousemove', e => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursorGlow.style.left = mouseX + 'px';
+            cursorGlow.style.top = mouseY + 'px';
+            if (!cursorGlow.classList.contains('is-active')) cursorGlow.classList.add('is-active');
+        });
+        document.addEventListener('mouseleave', () => cursorGlow.classList.remove('is-active'));
+
+        /* ═══════════════════════════════════════════
+           2. 3D TILT ON CARDS (service + work + stat)
+           ═══════════════════════════════════════════ */
+        const tiltCards = document.querySelectorAll('.service-card, .work-card, .stat');
+        tiltCards.forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * -8;
+                const rotateY = ((x - centerX) / centerX) * 8;
+                card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+                // Inner glow follows cursor
+                card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(0,229,255,0.06) 0%, var(--bg-card) 60%)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateZ(0)';
+                card.style.background = '';
+                card.style.transition = 'transform 0.6s cubic-bezier(0.22,1,0.36,1), background 0.6s ease';
+            });
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'transform 0.1s ease-out, background 0.1s ease-out';
+            });
+        });
+
+        /* ═══════════════════════════════════════════
+           3. PARALLAX DEPTH SCROLL
+           ═══════════════════════════════════════════ */
+        const parallaxElements = [
+            { el: document.querySelector('.bg-glow--tl'), speed: 0.03 },
+            { el: document.querySelector('.bg-glow--cr'), speed: -0.02 },
+            { el: document.querySelector('.dot-grid--tr'), speed: 0.05 },
+            { el: document.querySelector('.dot-grid--ml'), speed: -0.04 },
+            { el: document.querySelector('.hero__wave'), speed: 0.015 },
+        ].filter(p => p.el);
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            parallaxElements.forEach(({ el, speed }) => {
+                el.style.transform = `translateY(${scrollY * speed}px)` + (el.classList.contains('dot-grid--ml') ? ' translateX(0)' : '');
+            });
+        }, { passive: true });
+
+        /* ═══════════════════════════════════════════
+           4. HERO PARALLAX ON MOUSE
+           ═══════════════════════════════════════════ */
+        const heroSection = document.getElementById('hero');
+        const heroHeading = heroSection.querySelector('.hero__heading');
+        const heroEyebrow = heroSection.querySelector('.hero__eyebrow');
+        const heroSub = heroSection.querySelector('.hero__sub');
+
+        heroSection.addEventListener('mousemove', e => {
+            const rect = heroSection.getBoundingClientRect();
+            const cx = (e.clientX - rect.left) / rect.width - 0.5;
+            const cy = (e.clientY - rect.top) / rect.height - 0.5;
+            if (heroHeading)  heroHeading.style.transform = `translate(${cx * -20}px, ${cy * -12}px)`;
+            if (heroEyebrow)  heroEyebrow.style.transform = `translate(${cx * -10}px, ${cy * -6}px)`;
+            if (heroSub)      heroSub.style.transform = `translate(${cx * -8}px, ${cy * -5}px)`;
+        });
+        heroSection.addEventListener('mouseleave', () => {
+            [heroHeading, heroEyebrow, heroSub].forEach(el => {
+                if (el) el.style.transform = 'translate(0, 0)';
+            });
+        });
+
+        /* ═══════════════════════════════════════════
+           5. FLOATING PARTICLE CANVAS
+           ═══════════════════════════════════════════ */
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.3;
+                this.speedY = (Math.random() - 0.5) * 0.3;
+                this.opacity = Math.random() * 0.3 + 0.05;
+                this.hue = Math.random() > 0.5 ? 187 : 152; // cyan or green hue
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                // Drift toward mouse slightly
+                const dx = mouseX - this.x;
+                const dy = mouseY - this.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 300) {
+                    this.x += dx * 0.0008;
+                    this.y += dy * 0.0008;
+                    this.opacity = Math.min(this.opacity + 0.003, 0.5);
+                } else {
+                    this.opacity = Math.max(this.opacity - 0.001, 0.05);
+                }
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `hsla(${this.hue}, 100%, 60%, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 60; i++) particles.push(new Particle());
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            // Draw connecting lines between nearby particles
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(0, 229, 255, ${0.06 * (1 - dist / 120)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        /* ═══════════════════════════════════════════
+           6. SECTION REVEAL OBSERVER
+           ═══════════════════════════════════════════ */
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        /* ═══════════════════════════════════════════
+           7. ANIMATED STAT COUNTERS
+           ═══════════════════════════════════════════ */
+        const counterObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.target, 10);
+                    let current = 0;
+                    const increment = target / 60;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) { current = target; clearInterval(timer); }
+                        el.textContent = Math.round(current);
+                    }, 25);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+
+        /* ═══════════════════════════════════════════
+           8. FAQ ACCORDION
+           ═══════════════════════════════════════════ */
+        document.querySelectorAll('.faq-item__q').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isOpen = item.classList.contains('is-open');
+                document.querySelectorAll('.faq-item.is-open').forEach(el => el.classList.remove('is-open'));
+                if (!isOpen) item.classList.add('is-open');
+                btn.setAttribute('aria-expanded', !isOpen);
+            });
+        });
+
+        /* ═══════════════════════════════════════════
+           9. TESTIMONIAL SLIDER
+           ═══════════════════════════════════════════ */
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        let currentSlide = 0;
+        function showSlide(i) {
+            testimonials.forEach((t, idx) => {
+                t.style.display = idx === i ? 'block' : 'none';
+                if (idx === i) t.classList.add('is-visible');
+            });
+            dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+            currentSlide = i;
+        }
+        dots.forEach(d => d.addEventListener('click', () => showSlide(parseInt(d.dataset.index, 10))));
+        setInterval(() => showSlide((currentSlide + 1) % testimonials.length), 6000);
+
+        /* ═══════════════════════════════════════════
+           10. MOBILE MENU
+           ═══════════════════════════════════════════ */
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('nav');
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('is-open');
+            menuBtn.classList.toggle('is-open');
+        });
+        nav.querySelectorAll('.nav__link').forEach(link => {
+            link.addEventListener('click', () => { nav.classList.remove('is-open'); menuBtn.classList.remove('is-open'); });
+        });
+
+        /* ═══════════════════════════════════════════
+           11. HEADER SHRINK ON SCROLL
+           ═══════════════════════════════════════════ */
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('is-scrolled', window.scrollY > 50);
+        }, { passive: true });
+
+        /* ═══════════════════════════════════════════
+           12. WAVE MICRO-ANIMATION
+           ═══════════════════════════════════════════ */
+        let waveTime = 0;
+        function animateWave() {
+            waveTime += 0.003;
+            root.style.setProperty('--wave-shift', `${Math.sin(waveTime) * 15}px`);
+            root.style.setProperty('--wave-shift2', `${Math.cos(waveTime * 0.7) * 10}px`);
+            requestAnimationFrame(animateWave);
+        }
+        animateWave();
+
+        /* ═══════════════════════════════════════════
+           13. SMOOTH ANCHOR SCROLL
+           ═══════════════════════════════════════════ */
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                const t = document.querySelector(this.getAttribute('href'));
+                if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+    })();
+    </script>
+</body>
+</html>
